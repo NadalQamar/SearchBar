@@ -11,5 +11,6 @@ Made in C#.
 Changelog:
 
 Version: 0.11 = Added Some Comments to SearchBar.cs.
+
 Version: 0.12 = Removed Titlebar.
                 Added SubFeature to be able to change the search engine to search on.
