@@ -10,4 +10,4 @@ Made in C#.
 
 Changelog:
 
-Version: 0.11 = Added Some Comments
+Version: 0.11 = Added Some Comments to SearchBar.cs
