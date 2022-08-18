@@ -32,6 +32,7 @@ namespace SearchBar
         {
             this.searchLabel = new System.Windows.Forms.Label();
             this.searchBox = new System.Windows.Forms.TextBox();
+            this.searchEngineSelector = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // searchLabel
@@ -41,7 +42,7 @@ namespace SearchBar
             this.searchLabel.Location = new System.Drawing.Point(12, 9);
             this.searchLabel.Name = "searchLabel";
             this.searchLabel.Size = new System.Drawing.Size(387, 25);
-            this.searchLabel.TabIndex = 2;
+            this.searchLabel.TabIndex = 3;
             this.searchLabel.Text = "Enter your query and then press enter: ";
             // 
             // searchBox
@@ -53,15 +54,27 @@ namespace SearchBar
             this.searchBox.TabIndex = 1;
             this.searchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchBox_PressEnter);
             // 
+            // searchEngineSelector
+            // 
+            this.searchEngineSelector.FormattingEnabled = true;
+            this.searchEngineSelector.Items.AddRange(new object[] {
+            "Google",
+            "Bing"});
+            this.searchEngineSelector.Location = new System.Drawing.Point(34, 74);
+            this.searchEngineSelector.Name = "searchEngineSelector";
+            this.searchEngineSelector.Size = new System.Drawing.Size(137, 21);
+            this.searchEngineSelector.TabIndex = 2;
+            // 
             // SearchBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(481, 80);
+            this.ClientSize = new System.Drawing.Size(481, 116);
+            this.Controls.Add(this.searchEngineSelector);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.searchLabel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SearchBar";
@@ -79,5 +92,6 @@ namespace SearchBar
         #endregion
         private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.TextBox searchBox;
+        private System.Windows.Forms.ComboBox searchEngineSelector;
     }
 }

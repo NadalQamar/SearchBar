@@ -25,7 +25,7 @@ namespace SearchBar
 
         private void SearchBar_Load(object sender, EventArgs e)
         {
-
+            searchEngineSelector.SelectedIndex = 0;
 
         }
 
@@ -36,8 +36,16 @@ namespace SearchBar
             {
                 searchText = searchBox.Text;
                 try
-                {
-                    Process.Start($"https://www.google.com/search?q={searchText}");
+                {//SubFeature
+                    if(searchEngineSelector.SelectedIndex == 0)
+                    {
+                        Process.Start($"https://www.google.com/search?q={searchText}");
+                    }
+                    if(searchEngineSelector.SelectedIndex == 1)
+                    {
+                        Process.Start($"https://www.bing.com/search?q={searchText}");
+                    }
+                    
                 }
                 catch (Win32Exception noBrowser)
                 {
