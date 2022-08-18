@@ -11,9 +11,12 @@ using System.Diagnostics;
 
 namespace SearchBar
 {
-   
+    /// <summary>
+    /// Main Code for SearchBar
+    /// </summary>
     public partial class SearchBar : Form
     {
+        //added a field variable to take shapshot of the search query at the time of pressing the Enter key
         string searchText;
         public SearchBar()
         {
@@ -28,6 +31,7 @@ namespace SearchBar
 
         private void searchBox_PressEnter(object sender, KeyEventArgs e)
         {
+        //Key Feature
             if (e.KeyCode == Keys.Enter)
             {
                 searchText = searchBox.Text;
