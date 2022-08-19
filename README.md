@@ -5,7 +5,7 @@ Version: 0.12
 Allows user to search for anything using your default browser to Google Search.
 
 Key Feature is working using Google Chrome, Firefox, and Microsoft Edge.<br />
-Made in C#.
+Made in C# Empty Project (.Net Framework)[Visual Studio 2022]].
 
 Changelog:
 
