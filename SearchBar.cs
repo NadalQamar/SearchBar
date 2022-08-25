@@ -73,29 +73,32 @@ namespace SearchBar
             }
             return str;
         }
-        private string MiddleOfString1(string str1)
-        {
-            StringBuilder str2 = new StringBuilder(str1);
-            StringBuilder insertCharacter;
-            int i = 0;
-            do
+        private string EndOfString(string str1)
+        { 
+            StringBuilder str2 = new StringBuilder(str1);//takes the string and converts it to StringBuilder
+            StringBuilder insertCharacter;//needed for adding the substring to string
+            char compareC;
+
+            for (int i = 0; i < str2.Length; i++)//checks for and if found changes the character to the substring
             {
-                if (str2[i] == '+' || str2[i] == '=' || str2[i] == '/')
+                char c = str2[i];
+                compareC = ComparsionToCharSpecial(c);//takes the char from string and runs it against its list
+                if (compareC != 'n')//if found it will go into the if statement, else it will go to else statement
                 {
-                    insertCharacter = MiddleOfString2(str2[i]);
+                    insertCharacter = MiddleOfString(c);
                     str2 = str2.Insert(i, insertCharacter);
                     str2 = str2.Remove(i + 3, 1);
                 }
                 else
                 {
-                    i++;
+                    continue; //goes to next char in string
                 }
-            } while (str2.ToString().Contains('+') || str2.ToString().Contains('=') || str2.ToString().Contains('/'));
+            }
             return str2.ToString();
         }
-        private StringBuilder MiddleOfString2(char c)
+        private StringBuilder MiddleOfString(char c)
         {
-            StringBuilder str = new StringBuilder();
+            StringBuilder str = new StringBuilder();//depending on the char 
             if(c == '+')
             {
                 str.Append("%2B");
@@ -109,6 +112,25 @@ namespace SearchBar
                 str.Append("%2F");
             }
             return str;
+        }
+        private char ComparsionToCharSpecial(char c)
+        {//compares the char and if it finds one, returns it
+            if ( c == '+')
+            {
+                return '+';
+            }
+            if (c == '=')
+            {
+                return '=';
+            }
+            if (c == '/')
+            {
+                return '/';
+            }
+            else
+            {
+                return 'n';
+            }
         }
 
         private void SearchBox_PressEnter(object sender, KeyEventArgs e)
@@ -128,7 +150,7 @@ namespace SearchBar
                     {
                         if (i == 0)
                         {  
-                            searchText = MiddleOfString1(splitString[i]);
+                            searchText = EndOfString(splitString[i]);
                         }
                         else
                         {   //if search query has any un-needed spaces
@@ -136,13 +158,13 @@ namespace SearchBar
                             {
                                 continue;
                             }
-                            searchText = searchText + "+" + MiddleOfString1(splitString[i]);
+                            searchText = searchText + "+" + EndOfString(splitString[i]);
                             
                         }
                     }
                 }else
                 {
-                    searchText = MiddleOfString1(searchText);
+                    searchText = EndOfString(searchText);
                 }
                 try
                 {//SubFeature
