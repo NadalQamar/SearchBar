@@ -158,8 +158,7 @@ namespace SearchBar
                             {
                                 continue;
                             }
-                            searchText = searchText + "+" + EndOfString(splitString[i]);
-                            
+                            searchText = searchText + "+" + EndOfString(splitString[i]);                   
                         }
                     }
                 }else
