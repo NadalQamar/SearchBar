@@ -73,20 +73,40 @@ namespace SearchBar
             }
             return str;
         }
-        private string MiddleOfString(char c)
+        private string MiddleOfString1(string str1)
         {
-            string str = "";
+            StringBuilder str2 = new StringBuilder(str1);
+            StringBuilder insertCharacter;
+            int i = 0;
+            do
+            {
+                if (str2[i] == '+' || str2[i] == '=' || str2[i] == '/')
+                {
+                    insertCharacter = MiddleOfString2(str2[i]);
+                    str2 = str2.Insert(i, insertCharacter);
+                    str2 = str2.Remove(i + 3, 1);
+                }
+                else
+                {
+                    i++;
+                }
+            } while (str2.ToString().Contains('+') || str2.ToString().Contains('=') || str2.ToString().Contains('/'));
+            return str2.ToString();
+        }
+        private StringBuilder MiddleOfString2(char c)
+        {
+            StringBuilder str = new StringBuilder();
             if(c == '+')
             {
-                str = "%2B";
+                str.Append("%2B");
             }
             if (c == '=')
             {
-                str = "%3D";
+                str.Append("%3D");
             }
             if (c == '/')
             {
-                str = "%2F";
+                str.Append("%2F");
             }
             return str;
         }
@@ -106,24 +126,9 @@ namespace SearchBar
                     searchText = "";
                     for (int i = 0; i < splitString.Length; i++)
                     {
-                        string insertCharacter = "";
                         if (i == 0)
-                        {
-
-                            for(int j = 0; j < splitString[i].Length; j++)
-                            {
-                                char[] chars = splitString[i].ToCharArray();
-                                if (chars[j] == '+' || chars[j] == '=' || chars[j] == '/')
-                                {
-                                    insertCharacter = MiddleOfString(chars[j]);
-                                    splitString[i] = splitString[i].Insert(j, insertCharacter);
-                                }
-                                else
-                                {
-                                    continue;
-                                }
-                            }
-                            searchText = splitString[i];
+                        {  
+                            searchText = MiddleOfString1(splitString[i]);
                         }
                         else
                         {   //if search query has any un-needed spaces
@@ -131,18 +136,13 @@ namespace SearchBar
                             {
                                 continue;
                             }
-                            char mainC = searchText[i];
-                            if (mainC == '+' || mainC == '=' || mainC == '/')//good reference to use ASCII maybe?
-                            {
-                                insertCharacter = MiddleOfString(mainC);
-                                searchText = searchText.Insert(i, insertCharacter);
-                            }
-                            else
-                            {
-                                searchText = searchText + "+" + splitString[i];
-                            }
+                            searchText = searchText + "+" + MiddleOfString1(splitString[i]);
+                            
                         }
                     }
+                }else
+                {
+                    searchText = MiddleOfString1(searchText);
                 }
                 try
                 {//SubFeature
