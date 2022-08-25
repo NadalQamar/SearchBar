@@ -23,5 +23,5 @@ Version: 0.12<br />
 
 Version: 0.13<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added Multiple words in a Query.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added Added string replacement for characters "+", "=", and "/".<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added Added string replacements for characters "+", "=", and "/".<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Both string replacements work with Google and Bing.
