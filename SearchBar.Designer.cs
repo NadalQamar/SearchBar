@@ -29,6 +29,7 @@ namespace SearchBar
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
+        /// To check it with Designer, commit out the "this.Location" from SearchBar section
         /// </summary>
         private void InitializeComponent()
         {
@@ -85,7 +86,6 @@ namespace SearchBar
             this.Load += new EventHandler(this.SearchBar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

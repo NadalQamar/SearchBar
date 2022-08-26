@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D26147D0-C246-409A-A2F5-1E54E84FCBDD}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>SearchBar</RootNamespace>
     <AssemblyName>SearchBar</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
@@ -54,6 +54,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharacterList.cs" />
+    <Compile Include="ReplacmentStringList.cs" />
     <Compile Include="SearchBar.cs">
       <SubType>Form</SubType>
     </Compile>
