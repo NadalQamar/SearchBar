@@ -1,6 +1,6 @@
 # SearchBar
 
-Version: 0.13
+Version: 0.14
 
 WIP, Allows user to search for anything using your default browser to Google Search.
 
@@ -25,3 +25,7 @@ Version: 0.13<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added Multiple words in a Query.<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added Added string replacements for characters "+", "=", and "/".<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Both string replacements work with Google and Bing.
+
+Version: 0.14<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added two classes to SearchBar.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixed a bug with method BeginningOfString.
