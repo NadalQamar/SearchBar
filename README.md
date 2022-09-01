@@ -2,7 +2,7 @@
 
 Version: 0.14
 
-WIP, Allows user to search for anything using your default browser to Google Search.
+WIP, Allows user to search for anything using your default browser.
 
 Key Feature is working using Google Chrome, Firefox, and Microsoft Edge.<br />
 Made in C# Empty Project(.NET Framework) Template [Visual Studio 2022]].
